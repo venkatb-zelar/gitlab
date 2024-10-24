@@ -1,4 +1,4 @@
-apiVersion: v2  # Change to v2 for Helm 3 compatibility
+apiVersion: v1  # Change to v2 for Helm 3 compatibility
 name: gitlab
 description: GitLab is the most comprehensive AI-powered DevSecOps Platform.
 type: application

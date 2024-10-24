@@ -8,7 +8,7 @@ appVersion: "17.5.0"
 dependencies:
   - name: gitlab
     version: ">=17.0.0 <18.0.0"  # Specify a valid version range
-    repository: "https://charts.gitlab.io"
+    repository: http://charts.gitlab.io/
 
 keywords:
   - gitlab

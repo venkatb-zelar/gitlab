@@ -1,57 +1,57 @@
-
-global:
-  edition: ce
-
-  hosts:
-    domain: 192.168.1.10.nip.io
-    externalIP: 192.168.1.10
-
-certmanager-issuer:
-  email: umaa@zelarsoft.com
-  install: false
-
-prometheus:
-  server:
-    persistentVolume:
-      enabled: true
-      storageClass: local-path
-      accessMode:
-        - ReadWriteOnce
-      size: 4Gi
-
-redis:
-  master:
+gitlab:
+  global:
+    edition: ce
+  
+    hosts:
+      domain: 192.168.1.10.nip.io
+      externalIP: 192.168.1.10
+  
+  certmanager-issuer:
+    email: umaa@zelarsoft.com
+    install: false
+  
+  prometheus:
+    server:
+      persistentVolume:
+        enabled: true
+        storageClass: local-path
+        accessMode:
+          - ReadWriteOnce
+        size: 4Gi
+  
+  redis:
+    master:
+      persistence:
+        enable: true
+        storageClass: local-path
+        size: 4Gi
+        accessMode:
+          - ReadWriteMany
+  
+  postgresql:
+    primary:
+      persistence:
+        enabled: true
+        storageClass: local-path
+        size: 4Gi
+        accessMode:
+          - ReadWriteMany
+  
+  gitlab:
+    gitaly:
+      persistence:
+        enabled: true
+        storageClass: local-path
+        accessMode: ReadWriteOnce
+        size: 10Gi
+        matchLabels: {}
+        matchExpressions: []
+        subPath: "data"
+        annotations: {}
+  
+  minio:
     persistence:
       enable: true
       storageClass: local-path
-      size: 4Gi
-      accessMode:
-        - ReadWriteMany
-
-postgresql:
-  primary:
-    persistence:
-      enabled: true
-      storageClass: local-path
-      size: 4Gi
-      accessMode:
-        - ReadWriteMany
-
-gitlab:
-  gitaly:
-    persistence:
-      enabled: true
-      storageClass: local-path
+      size: 5Gi
       accessMode: ReadWriteOnce
-      size: 10Gi
-      matchLabels: {}
-      matchExpressions: []
-      subPath: "data"
-      annotations: {}
-
-minio:
-  persistence:
-    enable: true
-    storageClass: local-path
-    size: 5Gi
-    accessMode: ReadWriteOnce

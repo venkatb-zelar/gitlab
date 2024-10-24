@@ -10,9 +10,11 @@ dependencies:
     version: "8.5.0"
     repository: http://charts.gitlab.io/
   - name: certmanager-issuer
-    version: "*.*.*"
+    version: "0.1.0"
+    repository: https://github.com/jetstack/cert-manager
   - name: minio
-    version: "*.*.*"
+    version: "0.4.3"
+    repository: https://charts.min.io/
   - name: registry
     version: "*.*.*"
   - name: cert-manager

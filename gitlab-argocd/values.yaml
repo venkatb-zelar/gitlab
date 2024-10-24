@@ -5,8 +5,8 @@ gitlab:
     enabled: false
   
     hosts:
-      domain: 192.168.1.10.nip.io
-      externalIP: 192.168.1.10
+      domain: 192.168.1.233.nip.io
+      externalIP: 192.168.1.233
   
   certmanager-issuer:
     email: umaa@zelarsoft.com

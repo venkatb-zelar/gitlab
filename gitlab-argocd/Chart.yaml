@@ -15,8 +15,8 @@ dependencies:
   - name: minio
     version: "0.4.3"
     repository: https://charts.min.io/
-  - name: registry
-    version: "*.*.*"
+  # - name: registry
+  #   version: "*.*.*"
   - name: cert-manager
     version: v1.12.13
     repository: https://charts.jetstack.io/

@@ -1,6 +1,8 @@
 gitlab:
   global:
     edition: ce
+  upgradeCheck:
+    enabled: false
   
     hosts:
       domain: 192.168.1.10.nip.io

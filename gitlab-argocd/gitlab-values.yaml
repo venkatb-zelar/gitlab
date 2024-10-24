@@ -1,60 +1,56 @@
-gitlab:
-  global:
-    edition: ce
+global:
+  edition: ce
 
-    hosts:
-      domain: 192.168.1.10.nip.io
-      externalIP: 192.168.1.10
+  hosts:
+    domain: 192.168.1.10.nip.io
+    externalIP: 192.168.1.10
 
-  upgradeCheck:
-    enabled: false
+certmanager-issuer:
+  email: umaa@zelarsoft.com
+  install: false
 
-  certmanager-issuer:
-    email: umaa@zelarsoft.com
-    install: false
-
-  prometheus:
-    server:
-      persistentVolume:
-        enabled: true
-        storageClass: local-path
-        accessMode:
-          - ReadWriteOnce
-        size: 4Gi
-
-  redis:
-    master:
-      persistence:
-        enabled: true
-        storageClass: local-path
-        size: 4Gi
-        accessMode:
-          - ReadWriteMany
-
-  postgresql:
-    primary:
-      persistence:
-        enabled: true
-        storageClass: local-path
-        size: 4Gi
-        accessMode:
-          - ReadWriteMany
-
-  
-    gitaly:
-      persistence:
-        enabled: true
-        storageClass: local-path
-        accessMode: ReadWriteOnce
-        size: 10Gi
-        matchLabels: {}
-        matchExpressions: []
-        subPath: "data"
-        annotations: {}
-
-  minio:
-    persistence:
-      enabled: true # Changed from `enable` to `enabled`
+prometheus:
+  server:
+    persistentVolume:
+      enabled: true
       storageClass: local-path
-      size: 5Gi
+      accessMode:
+        - ReadWriteOnce
+      size: 4Gi
+
+redis:
+  master:
+    persistence:
+      enable: true
+      storageClass: local-path
+      size: 4Gi
+      accessMode:
+        - ReadWriteMany
+
+postgresql:
+  primary:
+    persistence:
+      enabled: true
+      storageClass: local-path
+      size: 4Gi
+      accessMode:
+        - ReadWriteMany
+
+gitlab:
+  gitaly:
+    persistence:
+      enabled: true
+      storageClass: local-path
       accessMode: ReadWriteOnce
+      size: 10Gi
+      matchLabels: {}
+      matchExpressions: []
+      subPath: "data"
+      annotations: {}
+
+minio:
+  persistence:
+    enable: true
+    storageClass: local-path
+    size: 5Gi
+    accessMode: ReadWriteOnce

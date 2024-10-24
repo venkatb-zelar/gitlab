@@ -6,62 +6,52 @@ version: 0.1.0
 appVersion: "0.1"
 
 dependencies:
-  - name: gitlab
-    version: '*.*.*'
-    repository: https://charts.gitlab.io
-  - name: gitlab
-      repository: ""
-      version: '*.*.*'
-    - name: certmanager-issuer
-      repository: ""
-      version: '*.*.*'
-    - name: minio
-      repository: ""
-      version: '*.*.*'
-    - name: registry
-      repository: ""
-      version: '*.*.*'
-    - alias: certmanager
-      condition: certmanager.install
-      name: cert-manager
-      repository: https://charts.jetstack.io/
-      version: v1.12.13
-    - condition: prometheus.install
-      name: prometheus
-      repository: https://prometheus-community.github.io/helm-charts
-      version: 15.18.0
-    - condition: postgresql.install
-      name: postgresql
-      repository: https://charts.bitnami.com/bitnami
-      version: 12.5.2
-    - condition: gitlab-runner.install
-      name: gitlab-runner
-      repository: https://charts.gitlab.io/
-      version: 0.69.0
-    - condition: redis.install
-      name: redis
-      repository: https://charts.bitnami.com/bitnami
-      version: 16.13.2
-    - condition: nginx-ingress.enabled
-      name: nginx-ingress
-      repository: ""
-      version: '*.*.*'
-    - alias: nginx-ingress-geo
-      condition: nginx-ingress-geo.enabled
-      name: nginx-ingress
-      repository: ""
-      version: '*.*.*'
-    - condition: gitlab-zoekt.install
-      name: gitlab-zoekt
-      repository: https://charts.gitlab.io/
-      version: 1.4.1
-    - condition: traefik.install
-      name: traefik
-      repository: https://helm.traefik.io/traefik
-      version: 10.19.4
-    - alias: haproxy
-      condition: haproxy.install
-      name: kubernetes-ingress
-      repository: https://haproxytech.github.io/helm-charts
-      version: 1.32.0
-  
+- name: gitlab
+  version: '*.*.*'
+- name: certmanager-issuer
+  version: '*.*.*'
+- name: minio
+  version: '*.*.*'
+- name: registry
+  version: '*.*.*'
+- name: cert-manager
+  version: v1.12.13
+  repository: https://charts.jetstack.io/
+  condition: certmanager.install
+  alias: certmanager
+- name: prometheus
+  version: 15.18.0
+  repository: https://prometheus-community.github.io/helm-charts
+  condition: prometheus.install
+- name: postgresql
+  version: 12.5.2
+  repository: https://charts.bitnami.com/bitnami
+  condition: postgresql.install
+- name: gitlab-runner
+  version: 0.69.0
+  repository: https://charts.gitlab.io/
+  condition: gitlab-runner.install
+- name: redis
+  version: 16.13.2
+  repository: https://charts.bitnami.com/bitnami
+  condition: redis.install
+- name: nginx-ingress
+  condition: nginx-ingress.enabled
+  version: '*.*.*'
+- name: nginx-ingress
+  condition: nginx-ingress-geo.enabled
+  version: '*.*.*'
+  alias: nginx-ingress-geo
+- name: gitlab-zoekt
+  version: 1.4.1
+  repository: https://charts.gitlab.io/
+  condition: gitlab-zoekt.install
+- name: traefik
+  repository: https://helm.traefik.io/traefik
+  condition: traefik.install
+  version: 10.19.4
+- name: kubernetes-ingress
+  alias: haproxy
+  version: 1.32.0
+  condition: haproxy.install
+  repository: https://haproxytech.github.io/helm-charts

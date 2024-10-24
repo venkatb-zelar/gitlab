@@ -1,69 +1,11 @@
-apiVersion: v1  # Change to v2 for Helm 3 compatibility
+apiVersion: v1
 name: gitlab
-description: GitLab is the most comprehensive AI-powered DevSecOps Platform.
+description: "gitlab community chart for greengroove"
 type: application
 version: 0.1.0
-appVersion: "17.5.0"
+appVersion: "0.1"
 
 dependencies:
-- name: gitlab
-  version: '*.*.*'
-- name: certmanager-issuer
-  version: '*.*.*'
-- name: minio
-  version: '*.*.*'
-- name: registry
-  version: '*.*.*'
-- name: cert-manager
-  version: v1.12.13
-  repository: https://charts.jetstack.io/
-  condition: certmanager.install
-  alias: certmanager
-- name: prometheus
-  version: 15.18.0
-  repository: https://prometheus-community.github.io/helm-charts
-  condition: prometheus.install
-- name: postgresql
-  version: 12.5.2
-  repository: https://charts.bitnami.com/bitnami
-  condition: postgresql.install
-- name: gitlab-runner
-  version: 0.70.1
-  repository: https://charts.gitlab.io/
-  condition: gitlab-runner.install
-- name: redis
-  version: 16.13.2
-  repository: https://charts.bitnami.com/bitnami
-  condition: redis.install
-- name: nginx-ingress
-  condition: nginx-ingress.enabled
-  version: '*.*.*'
-- name: nginx-ingress
-  condition: nginx-ingress-geo.enabled
-  version: '*.*.*'
-  alias: nginx-ingress-geo
-- name: gitlab-zoekt
-  version: 1.4.1
-  repository: https://charts.gitlab.io/
-  condition: gitlab-zoekt.install
-- name: traefik
-  repository: https://helm.traefik.io/traefik
-  condition: traefik.install
-  version: 10.19.4
-- name: kubernetes-ingress
-  alias: haproxy
-  version: 1.32.0
-  condition: haproxy.install
-  repository: https://haproxytech.github.io/helm-charts
-
-
-
-keywords:
-  - gitlab
-maintainers:
-  - email: support@gitlab.com
-    name: GitLab Inc.
-home: https://about.gitlab.com/
-icon: https://gitlab.com/gitlab-com/gitlab-artwork/raw/master/logo/logo-square.png
-sources:
-  - https://gitlab.com/gitlab-org/charts/gitlab
+  - name: gitlab
+    version: 17.5.0
+    repository: https://charts.gitlab.io

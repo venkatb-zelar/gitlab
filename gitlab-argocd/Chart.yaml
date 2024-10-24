@@ -10,7 +10,7 @@ dependencies:
     version: "8.5.0"
     repository: http://charts.gitlab.io/
   - name: certmanager-issuer
-    version: "0.1.0"
+    version: "*.*.*"
     repository: http://charts.gitlab.io/
   - name: minio
     version: "0.4.3"

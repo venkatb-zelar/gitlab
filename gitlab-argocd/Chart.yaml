@@ -7,7 +7,7 @@ appVersion: "0.1"
 
 dependencies:
   - name: gitlab
-    version: "8.5.0"
+    version: "8.5.1"
     repository: http://charts.gitlab.io/
   # - name: certmanager-issuer
   #   version: "*.*.*"

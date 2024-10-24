@@ -38,13 +38,14 @@ dependencies:
     version: 16.13.2
     repository: https://charts.bitnami.com/bitnami
     condition: redis.install
-  - name: nginx-ingress
+  - name: ingress-nginx
     version: "*.*.*"
     repository: https://kubernetes.github.io/ingress-nginx
     condition: nginx-ingress.enabled
-  - name: nginx-ingress
+  - name: ingress-nginx
     version: "*.*.*"
     alias: nginx-ingress-geo
+    repository: https://kubernetes.github.io/ingress-nginx
     condition: nginx-ingress-geo.enabled
   - name: gitlab-zoekt
     version: 1.4.1

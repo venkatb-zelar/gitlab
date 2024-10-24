@@ -40,7 +40,7 @@ gitlab:
         accessMode:
           - ReadWriteMany
 
-  gitlab:
+  
     gitaly:
       persistence:
         enabled: true

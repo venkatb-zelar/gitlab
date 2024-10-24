@@ -9,9 +9,9 @@ dependencies:
   - name: gitlab
     version: "8.5.0"
     repository: http://charts.gitlab.io/
-  - name: certmanager-issuer
-    version: "0.1.0"
-    repository: https://gitlab.com/gitlab-org/charts/gitlab/tree/master/charts/certmanager-issuer
+  # - name: certmanager-issuer
+  #   version: "0.1.0"
+  #   repository: https://gitlab.com/gitlab-org/charts/gitlab/tree/master/charts/certmanager-issuer
   - name: minio
     version: "0.4.3"
     repository: https://charts.min.io/

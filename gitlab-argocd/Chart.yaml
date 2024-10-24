@@ -1,0 +1,28 @@
+# apiVersion: v1
+# name: gitlab
+# description: "gitlab community chart for greengroove"
+# type: application
+# version: 0.1.0
+# appVersion: "0.1"
+
+# dependencies:
+#   - name: gitlab
+#     version: 17.5.0
+#     repository: http://charts.gitlab.io
+
+apiVersion: v1
+appVersion: v17.5.0
+description: GitLab is the most comprehensive AI-powered DevSecOps Platform.
+home: https://about.gitlab.com/
+icon: https://gitlab.com/gitlab-com/gitlab-artwork/raw/master/logo/logo-square.png
+keywords:
+  - gitlab
+maintainers:
+  - email: support@gitlab.com
+    name: GitLab Inc.
+name: gitlab
+sources:
+  - https://gitlab.com/gitlab-org/charts/gitlab
+version: 8.5.0
+dependencies:
+  - name: gitlab
